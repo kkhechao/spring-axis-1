@@ -1,0 +1,10 @@
+local\controller\HelloWorldController.class
+local\service\ServiceManagedBySpringDI.class
+local\axis\WSDDSpringRPCProvider.class
+local\axis\EngineConfigurationFactory.class
+local\config\WebSecurityConfig.class
+local\WebApplication.class
+local\service\HelloWorldService.class
+local\service\ServiceDeployedOnStartup.class
+local\axis\SpringRPCProvider.class
+local\config\AxisConfig.class

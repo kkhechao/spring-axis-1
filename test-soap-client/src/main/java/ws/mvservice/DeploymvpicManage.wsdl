@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://218.200.227.202:8089/jboss-net/services/DeploymvpicManage" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://218.200.227.202:8089/jboss-net/services/DeploymvpicManage" xmlns:intf="http://218.200.227.202:8089/jboss-net/services/DeploymvpicManage" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://schemas.crbt.cmcc.com" xmlns:tns2="http://schemas.prbt.cmcc.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema targetNamespace="http://schemas.crbt.cmcc.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://218.200.227.202:8089/jboss-net/services/DeploymvpicManage"/>
+   <import namespace="http://schemas.prbt.cmcc.com"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="PictureFile">
+    <sequence>
+     <element name="action" nillable="true" type="xsd:string"/>
+     <element name="fileUrl" nillable="true" type="xsd:string"/>
+     <element name="resourceID" nillable="true" type="xsd:string"/>
+     <element name="size" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfPictureFile">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:PictureFile[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="DeployPicture">
+    <sequence>
+     <element name="action" nillable="true" type="xsd:string"/>
+     <element name="cmpID" nillable="true" type="xsd:string"/>
+     <element name="contentDesc" nillable="true" type="xsd:string"/>
+     <element name="contentID" nillable="true" type="xsd:string"/>
+     <element name="contentLetter" nillable="true" type="xsd:string"/>
+     <element name="contentName" nillable="true" type="xsd:string"/>
+     <element name="contentType" nillable="true" type="xsd:string"/>
+     <element name="copyrightID" nillable="true" type="xsd:string"/>
+     <element name="invalidateDate" nillable="true" type="xsd:string"/>
+     <element name="photographer" nillable="true" type="xsd:string"/>
+     <element name="photographerLetter" nillable="true" type="xsd:string"/>
+     <element name="pictureFileSet" nillable="true" type="tns1:ArrayOfPictureFile"/>
+     <element name="pictureProperty" nillable="true" type="xsd:string"/>
+     <element name="price" nillable="true" type="xsd:string"/>
+     <element name="property" nillable="true" type="xsd:string"/>
+     <element name="relatedAlbum" nillable="true" type="xsd:string"/>
+     <element name="relatedSong" nillable="true" type="xsd:string"/>
+     <element name="securityID" nillable="true" type="xsd:string"/>
+     <element name="songSinger" nillable="true" type="xsd:string"/>
+     <element name="targetDeviceID" nillable="true" type="xsd:string"/>
+     <element name="transactionId" nillable="true" type="xsd:string"/>
+     <element name="validateDate" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Response">
+    <sequence>
+     <element name="description" nillable="true" type="xsd:string"/>
+     <element name="returnCode" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="MVFile">
+    <sequence>
+     <element name="action" nillable="true" type="xsd:string"/>
+     <element name="fileLength" nillable="true" type="xsd:string"/>
+     <element name="fileUrl" nillable="true" type="xsd:string"/>
+     <element name="resourceID" nillable="true" type="xsd:string"/>
+     <element name="size" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfMVFile">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:MVFile[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ParamInfo">
+    <sequence>
+     <element name="paramName" nillable="true" type="xsd:string"/>
+     <element name="paramValue" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="DeployMVEvt">
+    <sequence>
+     <element name="MVFileSet" nillable="true" type="tns1:ArrayOfMVFile"/>
+     <element name="action" nillable="true" type="xsd:string"/>
+     <element name="actorName" nillable="true" type="xsd:string"/>
+     <element name="actorNameLetter" nillable="true" type="xsd:string"/>
+     <element name="actorType" nillable="true" type="xsd:string"/>
+     <element name="cmpID" nillable="true" type="xsd:string"/>
+     <element name="composer" nillable="true" type="xsd:string"/>
+     <element name="contentDesc" nillable="true" type="xsd:string"/>
+     <element name="contentID" nillable="true" type="xsd:string"/>
+     <element name="contentLetter" nillable="true" type="xsd:string"/>
+     <element name="contentName" nillable="true" type="xsd:string"/>
+     <element name="copyrightID" nillable="true" type="xsd:string"/>
+     <element name="invalidateDate" nillable="true" type="xsd:string"/>
+     <element name="lyricWriter" nillable="true" type="xsd:string"/>
+     <element name="price" nillable="true" type="xsd:string"/>
+     <element name="productClass" nillable="true" type="xsd:string"/>
+     <element name="property" nillable="true" type="xsd:string"/>
+     <element name="publishArea" nillable="true" type="xsd:string"/>
+     <element name="securityID" nillable="true" type="xsd:string"/>
+     <element name="songType" nillable="true" type="xsd:string"/>
+     <element name="targetDeviceID" nillable="true" type="xsd:string"/>
+     <element name="transactionId" nillable="true" type="xsd:string"/>
+     <element name="validateDate" nillable="true" type="xsd:string"/>
+     <element name="paramSet" nillable="true" type="tns2:ArrayOfParamInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="MvPaymentConfirmRequestEvt">
+    <sequence>
+     <element name="MSISDN" nillable="true" type="xsd:string"/>
+     <element name="cmpID" nillable="true" type="xsd:string"/>
+     <element name="deviceType" nillable="true" type="xsd:string"/>
+     <element name="disconnectReason" nillable="true" type="xsd:string"/>
+     <element name="enableID" nillable="true" type="xsd:string"/>
+     <element name="endTime" nillable="true" type="xsd:string"/>
+     <element name="fileSize" nillable="true" type="xsd:string"/>
+     <element name="fileTotalTime" nillable="true" type="xsd:string"/>
+     <element name="playTime" nillable="true" type="xsd:string"/>
+     <element name="startTime" nillable="true" type="xsd:string"/>
+     <element name="timeStamp" nillable="true" type="xsd:string"/>
+     <element name="totalSendBytes" nillable="true" type="xsd:string"/>
+     <element name="transactionID" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace="http://schemas.prbt.cmcc.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://schemas.crbt.cmcc.com"/>
+   <import namespace="http://218.200.227.202:8089/jboss-net/services/DeploymvpicManage"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="ArrayOfParamInfo">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:ParamInfo[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+  </schema>
+  <schema targetNamespace="http://218.200.227.202:8089/jboss-net/services/DeploymvpicManage" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://schemas.crbt.cmcc.com"/>
+   <import namespace="http://schemas.prbt.cmcc.com"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="VRBTIssueProductNotifyEvt">
+    <sequence>
+     <element name="DID" nillable="true" type="soapenc:string"/>
+     <element name="DIDPwd" nillable="true" type="soapenc:string"/>
+     <element name="SEQ" nillable="true" type="soapenc:string"/>
+     <element name="accessPlatformID" nillable="true" type="soapenc:string"/>
+     <element name="eventType" nillable="true" type="soapenc:string"/>
+     <element name="toneID" nillable="true" type="soapenc:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="mvPaymentConfirmRequestRequest">
+
+      <wsdl:part name="event" type="tns1:MvPaymentConfirmRequestEvt">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="vRBTIssueProductNotifyResponse">
+
+      <wsdl:part name="vRBTIssueProductNotifyReturn" type="tns1:Response">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deployPictureResponse">
+
+      <wsdl:part name="deployPictureReturn" type="tns1:Response">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deployMVResponse">
+
+      <wsdl:part name="deployMVReturn" type="tns1:Response">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mvPaymentConfirmRequestResponse">
+
+      <wsdl:part name="mvPaymentConfirmRequestReturn" type="tns1:Response">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deployMVRequest">
+
+      <wsdl:part name="event" type="tns1:DeployMVEvt">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deployPictureRequest">
+
+      <wsdl:part name="event" type="tns1:DeployPicture">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="vRBTIssueProductNotifyRequest">
+
+      <wsdl:part name="event" type="impl:VRBTIssueProductNotifyEvt">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="DeploymvpicManage">
+
+      <wsdl:operation name="deployPicture" parameterOrder="event">
+
+         <wsdl:input message="impl:deployPictureRequest" name="deployPictureRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deployPictureResponse" name="deployPictureResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deployMV" parameterOrder="event">
+
+         <wsdl:input message="impl:deployMVRequest" name="deployMVRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deployMVResponse" name="deployMVResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mvPaymentConfirmRequest" parameterOrder="event">
+
+         <wsdl:input message="impl:mvPaymentConfirmRequestRequest" name="mvPaymentConfirmRequestRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:mvPaymentConfirmRequestResponse" name="mvPaymentConfirmRequestResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="vRBTIssueProductNotify" parameterOrder="event">
+
+         <wsdl:input message="impl:vRBTIssueProductNotifyRequest" name="vRBTIssueProductNotifyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:vRBTIssueProductNotifyResponse" name="vRBTIssueProductNotifyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DeploymvpicManageSoapBinding" type="impl:DeploymvpicManage">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="deployPicture">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deployPictureRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://deploymvpic.soap2.pe.imp.ivas.huawei.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deployPictureResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://218.200.227.202:8089/jboss-net/services/DeploymvpicManage" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deployMV">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deployMVRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://deploymvpic.soap2.pe.imp.ivas.huawei.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deployMVResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://218.200.227.202:8089/jboss-net/services/DeploymvpicManage" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mvPaymentConfirmRequest">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="mvPaymentConfirmRequestRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://deploymvpic.soap2.pe.imp.ivas.huawei.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="mvPaymentConfirmRequestResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://218.200.227.202:8089/jboss-net/services/DeploymvpicManage" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="vRBTIssueProductNotify">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="vRBTIssueProductNotifyRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://generation.picmv.cmcc.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="vRBTIssueProductNotifyResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://218.200.227.202:8089/jboss-net/services/DeploymvpicManage" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DeploymvpicManageService">
+
+      <wsdl:port binding="impl:DeploymvpicManageSoapBinding" name="DeploymvpicManage">
+
+         <wsdlsoap:address location="http://10.25.193.114:18088/services/DeploymvpicManage"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
